@@ -1,0 +1,14 @@
+<h3>確認します。本当にこの内容でよろしいでしょうか?</h3>
+
+<%= form_with(model: @blog, local: true) do |form| %>
+  <%= form.hidden_field :title %>
+  <%= form.hidden_field :content %>
+
+  <p>本文:<%= @blog.content %></p>
+  <%= form.submit "登録する" %>
+  <%= form.submit "戻る",name:'back' %>
+  <% end %>
+
+  
+
+  <!--form.hidden_fieldを使用して、入力フォームを生成せず、new Viewからきた値をそのまま、confirmアクションに渡すようにします。-->
